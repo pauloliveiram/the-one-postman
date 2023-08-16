@@ -1,0 +1,643 @@
+{
+	"info": {
+		"_postman_id": "956a2c4c-db3f-4187-b306-dd0a7fd66686",
+		"name": "THE LORD OF THE RINGS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27429245"
+	},
+	"item": [
+		{
+			"name": "Capítulo específico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"The response has all expected properties\", () => {",
+							"    const responseJson = pm.response.json();",
+							"",
+							"    pm.expect(responseJson.docs).to.be.an('array');",
+							"    pm.expect(responseJson.docs[0]._id).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].chapterName).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].book).to.be.a('string');",
+							"    pm.expect(responseJson.total).to.be.a('number');",
+							"    pm.expect(responseJson.limit).to.be.a('number');",
+							"    pm.expect(responseJson.offset).to.be.a('number');",
+							"    pm.expect(responseJson.page).to.be.a('number');",
+							"    pm.expect(responseJson.pages).to.be.a('number');",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TLOTR_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{TLOTR_URL}}/chapter/6091b6d6d58360f988133b8b",
+					"host": [
+						"{{TLOTR_URL}}"
+					],
+					"path": [
+						"chapter",
+						"6091b6d6d58360f988133b8b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar capítulos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"The response has all expected properties\", () => {",
+							"    const responseJson = pm.response.json();",
+							"",
+							"    pm.expect(responseJson.docs).to.be.an('array');",
+							"    pm.expect(responseJson.docs[0]._id).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].chapterName).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].book).to.be.a('string');",
+							"    pm.expect(responseJson.total).to.be.a('number');",
+							"    pm.expect(responseJson.limit).to.be.a('number');",
+							"    pm.expect(responseJson.offset).to.be.a('number');",
+							"    pm.expect(responseJson.page).to.be.a('number');",
+							"    pm.expect(responseJson.pages).to.be.a('number');",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TLOTR_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{TLOTR_URL}}/chapter",
+					"host": [
+						"{{TLOTR_URL}}"
+					],
+					"path": [
+						"chapter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Frase específica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"The response has all expected properties\", () => {",
+							"    const responseJson = pm.response.json();",
+							"",
+							"    pm.expect(responseJson.docs).to.be.an('array');",
+							"    pm.expect(responseJson.docs[0]._id).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].dialog).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].movie).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].character).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].id).to.be.a('string');",
+							"    pm.expect(responseJson.total).to.be.a('number');",
+							"    pm.expect(responseJson.limit).to.be.a('number');",
+							"    pm.expect(responseJson.offset).to.be.a('number');",
+							"    pm.expect(responseJson.page).to.be.a('number');",
+							"    pm.expect(responseJson.pages).to.be.a('number');",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TLOTR_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{TLOTR_URL}}/quote/5cd96e05de30eff6ebcce7e9",
+					"host": [
+						"{{TLOTR_URL}}"
+					],
+					"path": [
+						"quote",
+						"5cd96e05de30eff6ebcce7e9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar frases",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"The response has all expected properties\", () => {",
+							"    const responseJson = pm.response.json();",
+							"",
+							"    pm.expect(responseJson.docs).to.be.an('array');",
+							"    pm.expect(responseJson.docs[0]._id).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].dialog).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].movie).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].character).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].id).to.be.a('string');",
+							"    pm.expect(responseJson.total).to.be.a('number');",
+							"    pm.expect(responseJson.limit).to.be.a('number');",
+							"    pm.expect(responseJson.offset).to.be.a('number');",
+							"    pm.expect(responseJson.page).to.be.a('number');",
+							"    pm.expect(responseJson.pages).to.be.a('number');",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TLOTR_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{TLOTR_URL}}/quote",
+					"host": [
+						"{{TLOTR_URL}}"
+					],
+					"path": [
+						"quote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Personagem específico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"The response has all expected properties\", () => {",
+							"    const responseJson = pm.response.json();",
+							"",
+							"    pm.expect(responseJson.docs).to.be.an('array');",
+							"    pm.expect(responseJson.docs[0]._id).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].height).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].race).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].gender).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].birth).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].spouse).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].death).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].realm).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].hair).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].name).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].wikiUrl).to.be.a('string');",
+							"    pm.expect(responseJson.total).to.be.a('number');",
+							"    pm.expect(responseJson.limit).to.be.a('number');",
+							"    pm.expect(responseJson.offset).to.be.a('number');",
+							"    pm.expect(responseJson.page).to.be.a('number');",
+							"    pm.expect(responseJson.pages).to.be.a('number');",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TLOTR_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{TLOTR_URL}}/character/5cd99d4bde30eff6ebccfbbe",
+					"host": [
+						"{{TLOTR_URL}}"
+					],
+					"path": [
+						"character",
+						"5cd99d4bde30eff6ebccfbbe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar personagens",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"The response has all expected properties\", () => {",
+							"    const responseJson = pm.response.json();",
+							"",
+							"    pm.expect(responseJson.docs).to.be.an('array');",
+							"    pm.expect(responseJson.docs[0]._id).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].height).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].race).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].gender).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].birth).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].spouse).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].death).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].realm).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].hair).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].name).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].wikiUrl).to.be.a('string');",
+							"    pm.expect(responseJson.total).to.be.a('number');",
+							"    pm.expect(responseJson.limit).to.be.a('number');",
+							"    pm.expect(responseJson.offset).to.be.a('number');",
+							"    pm.expect(responseJson.page).to.be.a('number');",
+							"    pm.expect(responseJson.pages).to.be.a('number');",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TLOTR_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{TLOTR_URL}}/character",
+					"host": [
+						"{{TLOTR_URL}}"
+					],
+					"path": [
+						"character"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar frases de um filme específico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"The response has all expected properties\", () => {",
+							"    const responseJson = pm.response.json();",
+							"",
+							"    pm.expect(responseJson.docs).to.be.an('array');",
+							"    pm.expect(responseJson.docs[0]._id).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].dialog).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].movie).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].character).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].id).to.be.a('string');",
+							"    pm.expect(responseJson.total).to.be.a('number');",
+							"    pm.expect(responseJson.limit).to.be.a('number');",
+							"    pm.expect(responseJson.offset).to.be.a('number');",
+							"    pm.expect(responseJson.page).to.be.a('number');",
+							"    pm.expect(responseJson.pages).to.be.a('number');",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TLOTR_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{TLOTR_URL}}/movie/5cd95395de30eff6ebccde5b/quote",
+					"host": [
+						"{{TLOTR_URL}}"
+					],
+					"path": [
+						"movie",
+						"5cd95395de30eff6ebccde5b",
+						"quote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filme específico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"The response has all expected properties\", () => {",
+							"    const responseJson = pm.response.json();",
+							"",
+							"    pm.expect(responseJson.docs).to.be.an('array');",
+							"    pm.expect(responseJson.docs[0]._id).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].name).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].runtimeInMinutes).to.be.a('number');",
+							"    pm.expect(responseJson.docs[0].budgetInMillions).to.be.a('number');",
+							"    pm.expect(responseJson.docs[0].boxOfficeRevenueInMillions).to.be.a('number');",
+							"    pm.expect(responseJson.docs[0].academyAwardNominations).to.be.a('number');",
+							"    pm.expect(responseJson.docs[0].academyAwardWins).to.be.a('number');",
+							"    pm.expect(responseJson.docs[0].rottenTomatoesScore).to.be.a('number');",
+							"    pm.expect(responseJson.total).to.be.a('number');",
+							"    pm.expect(responseJson.limit).to.be.a('number');",
+							"    pm.expect(responseJson.offset).to.be.a('number');",
+							"    pm.expect(responseJson.page).to.be.a('number');",
+							"    pm.expect(responseJson.pages).to.be.a('number');",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TLOTR_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{TLOTR_URL}}/movie/5cd95395de30eff6ebccde56",
+					"host": [
+						"{{TLOTR_URL}}"
+					],
+					"path": [
+						"movie",
+						"5cd95395de30eff6ebccde56"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar filmes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"The response has all expected properties\", () => {",
+							"    const responseJson = pm.response.json();",
+							"",
+							"    pm.expect(responseJson.docs).to.be.an('array');",
+							"    pm.expect(responseJson.docs[0]._id).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].name).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].runtimeInMinutes).to.be.a('number');",
+							"    pm.expect(responseJson.docs[0].budgetInMillions).to.be.a('number');",
+							"    pm.expect(responseJson.docs[0].boxOfficeRevenueInMillions).to.be.a('number');",
+							"    pm.expect(responseJson.docs[0].academyAwardNominations).to.be.a('number');",
+							"    pm.expect(responseJson.docs[0].academyAwardWins).to.be.a('number');",
+							"    pm.expect(responseJson.docs[0].rottenTomatoesScore).to.be.a('number');",
+							"    pm.expect(responseJson.total).to.be.a('number');",
+							"    pm.expect(responseJson.limit).to.be.a('number');",
+							"    pm.expect(responseJson.offset).to.be.a('number');",
+							"    pm.expect(responseJson.page).to.be.a('number');",
+							"    pm.expect(responseJson.pages).to.be.a('number');",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TLOTR_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{TLOTR_URL}}/movie",
+					"host": [
+						"{{TLOTR_URL}}"
+					],
+					"path": [
+						"movie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar capítulos dos livros",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"The response has all expected properties\", () => {",
+							"    const responseJson = pm.response.json();",
+							"",
+							"    pm.expect(responseJson.docs).to.be.an('array');",
+							"    pm.expect(responseJson.docs[0]._id).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].chapterName).to.be.a('string');",
+							"    pm.expect(responseJson.total).to.be.a('number');",
+							"    pm.expect(responseJson.limit).to.be.a('number');",
+							"    pm.expect(responseJson.offset).to.be.a('number');",
+							"    pm.expect(responseJson.page).to.be.a('number');",
+							"    pm.expect(responseJson.pages).to.be.a('number');",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{TLOTR_URL}}/book/5cf5805fb53e011a64671582/chapter",
+					"host": [
+						"{{TLOTR_URL}}"
+					],
+					"path": [
+						"book",
+						"5cf5805fb53e011a64671582",
+						"chapter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Livro específico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"The response has all expected properties\", () => {",
+							"    const responseJson = pm.response.json();",
+							"",
+							"    pm.expect(responseJson.docs).to.be.an('array');",
+							"    pm.expect(responseJson.docs[0]._id).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].name).to.be.a('string');",
+							"    pm.expect(responseJson.total).to.be.a('number');",
+							"    pm.expect(responseJson.limit).to.be.a('number');",
+							"    pm.expect(responseJson.offset).to.be.a('number');",
+							"    pm.expect(responseJson.page).to.be.a('number');",
+							"    pm.expect(responseJson.pages).to.be.a('number');",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{TLOTR_URL}}/book/5cf5805fb53e011a64671582",
+					"host": [
+						"{{TLOTR_URL}}"
+					],
+					"path": [
+						"book",
+						"5cf5805fb53e011a64671582"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar livros",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"The response has all expected properties\", () => {",
+							"    const responseJson = pm.response.json();",
+							"",
+							"    pm.expect(responseJson.docs).to.be.an('array');",
+							"    pm.expect(responseJson.docs[0]._id).to.be.a('string');",
+							"    pm.expect(responseJson.docs[0].name).to.be.a('string');",
+							"    pm.expect(responseJson.total).to.be.a('number');",
+							"    pm.expect(responseJson.limit).to.be.a('number');",
+							"    pm.expect(responseJson.offset).to.be.a('number');",
+							"    pm.expect(responseJson.page).to.be.a('number');",
+							"    pm.expect(responseJson.pages).to.be.a('number');",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer Roz-JvCROWSUY3ltQwxf",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{TLOTR_URL}}/book",
+					"host": [
+						"{{TLOTR_URL}}"
+					],
+					"path": [
+						"book"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
