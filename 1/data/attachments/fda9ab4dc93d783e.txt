@@ -1,0 +1,19 @@
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("The response has all expected properties", () => {
+    const responseJson = pm.response.json();
+
+    pm.expect(responseJson.docs).to.be.an('array');
+    pm.expect(responseJson.docs[0]._id).to.be.a('string');
+    pm.expect(responseJson.docs[0].dialog).to.be.a('string');
+    pm.expect(responseJson.docs[0].movie).to.be.a('string');
+    pm.expect(responseJson.docs[0].character).to.be.a('string');
+    pm.expect(responseJson.docs[0].id).to.be.a('string');
+    pm.expect(responseJson.total).to.be.a('number');
+    pm.expect(responseJson.limit).to.be.a('number');
+    pm.expect(responseJson.offset).to.be.a('number');
+    pm.expect(responseJson.page).to.be.a('number');
+    pm.expect(responseJson.pages).to.be.a('number');
+})
